@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 189.13, "left": -77.46, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 235.56,
+      "left": 258.02,
+      "attrs": { "temperature": "37", "humidity": "25.5" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -37.18,
+      "left": 90.71,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -42.63,
+      "left": 148.47,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -44.94,
+      "left": 213.64,
+      "attrs": { "color": "blue" }
+    },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": 7.54, "left": -114.68, "attrs": {} }
+  ],
+  "connections": [
+    [ "dht1:VCC", "uno:5V", "red", [ "v36.16", "h-180.18" ] ],
+    [ "dht1:SDA", "uno:A0", "green", [ "v53.79", "h-143.82" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v22.67", "h19.39", "v-225.12", "h-280.1" ] ],
+    [ "led3:C", "led2:C", "black", [ "v12", "h-53.5" ] ],
+    [ "led2:C", "led1:C", "black", [ "v13.52", "h-54.07" ] ],
+    [ "uno:GND.1", "led1:C", "black", [ "v-56.44", "h43.04", "v2.07" ] ],
+    [ "led3:A", "uno:3", "blue", [ "v40.01", "h-27.27" ] ],
+    [ "led2:A", "uno:5", "limegreen", [ "v43.6", "h-13.31" ] ],
+    [ "led1:A", "uno:6", "red", [ "v46.15", "h27.64" ] ],
+    [ "sd1:SCK", "uno:13", "green", [ "h0" ] ],
+    [ "sd1:DO", "uno:12", "green", [ "h0" ] ],
+    [ "sd1:DI", "uno:11", "green", [ "h102.55", "v71.76" ] ],
+    [ "sd1:CS", "uno:10", "green", [ "h0" ] ],
+    [ "sd1:GND", "uno:GND.1", "black", [ "h0" ] ],
+    [
+      "uno:5V",
+      "sd1:VCC",
+      "red",
+      [ "v28.84", "h-194.87", "v-288", "h117.27", "v-68.68", "h-17.57" ]
+    ]
+  ]
+}
